@@ -1,7 +1,7 @@
 @extends('layout.index')
 @section('title')
-    Halima
+    ss
 @endsection
 @section('content')
-    <h1 class="bg-danger">Hali</h1>
+    <h1 class="bg-danger">ss</h1>
 @endsection
