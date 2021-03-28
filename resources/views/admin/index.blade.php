@@ -1,5 +1,7 @@
 @extends('layout.index')
-@section('title') News @endsection
+@section('title')
+    Admin
+@endsection
 @section('content')
-
+    
 @endsection
