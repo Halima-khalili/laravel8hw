@@ -8,7 +8,7 @@
         <div class="col-md-8 shadow p-5 rounded mx-auto" >
             <form action="{{ route('createPost') }}" method="post" class="d-flex flex-column">
                 @csrf
-                    <h1 class="font-weight-bold">Create New Post</h1>
+                    <h1 class="font-weight-bold text-center">Create New Post</h1>
                     <hr>
                 
                 @if (Session::get('fail'))
@@ -28,7 +28,7 @@
                     <textarea type="text" name="content" placeholder="Enter Content" class="form-control" value="{{ old('username') }}"></textarea>
                     <span class="text-danger">@error('content') {{ $message }} @enderror</span>
                 </div>
-                <div class="form-group d-inline-flex mx-auto ">
+                <div class="form-group d-inline-flex ">
                     <button type="submit" class="btn px-5 btn-primary">Create</button>
                 </div>
             </form>

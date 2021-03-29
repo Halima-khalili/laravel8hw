@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row p-3 shadow rounded" style="margin-top:100px">
-            <h1 class="font-weight-bold">Profile Info</h1><hr>
+            <h1 class="font-weight-bold text-center">Profile Info</h1><hr>
             @if (Session::get('success'))
                 <div class="results">
                     <div class="alert alert-success">

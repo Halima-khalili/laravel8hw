@@ -5,10 +5,10 @@
 @section('content')
 <div class="container">
     <div class="row" style="margin-top:100px">
-        <div class="col-md-8 shadow p-5 rounded mx-auto background" >
+        <div class="col-md-8 shadow p-5 rounded mx-auto" >
             <form action="{{ route('adminpage.create') }}" method="post" class="d-flex flex-column">
                 @csrf
-                    <h1 class="font-weight-bold">Register Here</h1>
+                    <h1 class="font-weight-bold text-center">Register Here</h1>
                     <hr>
                 
                 @if (Session::get('fail'))
@@ -33,10 +33,10 @@
                     <input type="password" name="password" placeholder="Enter password" class="form-control">
                     <span class="text-danger">@error('password') {{ $message }} @enderror</span>
                 </div>
-                <div class="form-group d-inline-flex mx-auto ">
+                <div class="form-group d-inline-flex ">
                     <button type="submit" class="btn px-5 btn-primary">Register</button>
                 </div>
-                <a href="admin" class="d-inline-flex mx-auto">Already have Acount!</a>
+                <a href="{{ url('login') }}" class="d-inline-flex">Already have Acount!</a>
             </form>
         </div>
     </div>

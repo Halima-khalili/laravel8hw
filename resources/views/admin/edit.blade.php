@@ -8,7 +8,7 @@
         <div class="col-md-8 shadow p-5 rounded mx-auto" >
             <form action="{{ route('adminpage.update') }}" method="POST" class="d-flex flex-column">
                 @csrf
-                    <h1 class="font-weight-bold">Edit your Info</h1>
+                    <h1 class="font-weight-bold text-center">Edit your Info</h1>
                     <hr>
                 
                 @if (Session::get('fail'))

@@ -29,7 +29,7 @@
                     <textarea type="text" name="content" placeholder="Enter content" class="form-control" >{{ $post->content }}</textarea>
                     <span class="text-danger">@error('content') {{ $message }} @enderror</span>
                 </div>
-                <div class="form-group d-inline-flex mx-auto ">
+                <div class="form-group d-inline-flex ">
                     <button type="submit" class="btn px-5 btn-primary">Update Post</button>
                 </div>
             </form>
