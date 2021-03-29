@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,20 @@ use App\Http\Controllers\UserAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PostsController::class, 'index']);
 
-// Login Route
-Route::get('admin', [UserAuthController::class, 'login']);
-// Register Route
-Route::get('register', [UserAuthController::class, 'register']);
-//Create
-Route::post('create', [UserAuthController::class, 'create'])->name('admin.create');
+
+Route::get('login', [UserAuthController::class, 'login'])->middleware('AlreadyLoggedIn');
+Route::get('register', [UserAuthController::class, 'register'])->middleware('AlreadyLoggedIn');
+Route::post('create', [UserAuthController::class, 'create'])->name('adminpage.create');
+Route::post('check', [UserAuthController::class, 'check'])->name('adminpage.check');
+Route::get('profile', [UserAuthController::class, 'profile'])->middleware('isLogged');
+Route::get('logout', [UserAuthController::class, 'logout']);
+Route::get('edit', [UserAuthController::class, 'edit']);
+Route::post('update', [UserAuthController::class, 'update'])->name('adminpage.update');
+
+Route::get('registerPost', [PostsController::class, 'registerPost']);
+Route::post('createPost', [PostsController::class, 'createPost'])->name('createPost');
+Route::get('editPost/{id}', [PostsController::class, 'editPost'])->name('editPost');
+Route::post('updatePost', [PostsController::class, 'updatePost'])->name('updatePost');
+Route::get('deletePost/{id}',[PostsController::class, 'deletePost']);
